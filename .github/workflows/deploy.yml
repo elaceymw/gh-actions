@@ -70,10 +70,10 @@ jobs:
         with:
           bucket: your-bucket-name
           disk-folder: ./dist
-  information:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Run custom action
-        uses: ./.github/actions/deploy-s3-javascript
+  # information:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Get code
+  #       uses: actions/checkout@v3
+  #     - name: Run custom action
+  #       uses: ./.github/actions/deploy-s3-javascript
