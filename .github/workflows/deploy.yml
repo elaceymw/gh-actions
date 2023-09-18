@@ -51,7 +51,6 @@ jobs:
           path: dist
   deploy:
     needs: build
-    id: deploy
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -64,6 +63,7 @@ jobs:
       - name: Output contents
         run: ls
       - name: Deploy site
+        id: deploy
         uses: ./.github/actions/deploy-s3-javascript
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID}}
