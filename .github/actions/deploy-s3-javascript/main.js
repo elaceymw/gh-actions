@@ -18,6 +18,9 @@ function run() {
     core.notice(`bucket: ${bucket}`);
     core.notice(`bucketRegion: ${bucketRegion}`);
     core.notice(`distFolder: ${distFolder}`);
+
+    const websiteURL = `http://${bucket}.s3-website-${bucketRegion}.awsamazon.com`;
+    core.setOutput('website-url', websiteURL);
 }
 
 run();

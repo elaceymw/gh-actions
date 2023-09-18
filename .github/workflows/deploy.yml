@@ -51,6 +51,7 @@ jobs:
           path: dist
   deploy:
     needs: build
+    id: deploy
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -70,6 +71,10 @@ jobs:
         with:
           bucket: your-bucket-name
           dist-folder: ./dist
+      - name: Output information
+        run: |
+          echo "Live URL ${{ steps.deploy.outputs.website-url }}"
+
   # information:
   #   runs-on: ubuntu-latest
   #   steps:
